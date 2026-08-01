@@ -1,0 +1,6 @@
+{
+  "name": "planty",
+  "version": "1.0.0",
+  "description": "Watering reminders for your plants — tiny, local-first, no accounts.",
+  "private": true
+}
