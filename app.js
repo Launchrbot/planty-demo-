@@ -12,7 +12,8 @@ function render() {
   list.textContent = "";
   plants.forEach(function (p, i) {
     const li = document.createElement("li");
-    li.textContent = p.name + " — water every " + p.days + " days ";
+    p.lastWatered = p.lastWatered || Date.now();
+    li.textContent = p.name + " — " + formatDue(daysUntilNextWater(p.lastWatered, p.days)) + " ";
     const del = document.createElement("button");
     del.textContent = "remove";
     del.addEventListener("click", function () { plants.splice(i, 1); save(); render(); });
@@ -26,7 +27,7 @@ document.getElementById("add-form").addEventListener("submit", function (e) {
   const name = document.getElementById("plant-name").value.trim();
   const days = parseInt(document.getElementById("days").value, 10);
   if (!name || !days) return;
-  plants.push({ name: name, days: days });
+  plants.push({ name: name, days: days, lastWatered: Date.now() });
   save(); render();
   e.target.reset();
 });
