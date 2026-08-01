@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planty — watering reminders</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌿 Planty</h1>
+  <p id="greeting"></p>
+  <form id="add-form">
+    <input id="plant-name" placeholder="Plant name" required>
+    <input id="days" type="number" min="1" value="7" required>
+    <button type="submit">Add plant</button>
+  </form>
+  <ul id="plants"></ul>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
